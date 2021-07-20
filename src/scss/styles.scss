@@ -1,5 +1,7 @@
 @import "_reset";
 @import "_variables";
+@import "_twoPanels";
+@import "_productsList";
 
 body {
   display: flex;
@@ -8,11 +10,24 @@ body {
   justify-content: center;
 }
 
+p {
+  font-family: freight-display-pro,"Times New Roman",serif;
+}
+
+h4 {
+  font-weight: bold;              
+  letter-spacing: 2.2px;
+  font-family: proxima-nova,Helvetica,Arial,sans-serif;
+}
+
 button {
+  font-weight: bold;              
+  font-size: 10px;
+  letter-spacing: 2.2px;
   background-color: transparent;
   border: none;
   text-transform: uppercase;
-  
+  cursor: pointer;
   &:hover {
     cursor: pointer;
   }
@@ -46,6 +61,14 @@ header {
   }
 }
 
+h4 {
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 34px;
+}
 
 main {
   width: 80%;
@@ -53,46 +76,23 @@ main {
   display: flex;
   flex-direction: column;
   .two_panels {
-    display: flex;
-    width: 100%;
-    margin-bottom: 80px;
-    .two_panels-img {
-      width: 50%;
-      img {
-        width: 100%;
-      }
+    &:nth-child(1) {
+      @include twoPanels(#FBF7F6);
     }
-    .two_panels-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 50%;
-      background-color: #FBF7F6;
-      text-align: center;
-      h4 {
-        font-size: 10px;
-        text-transform: uppercase;
-        margin-bottom: 20px;
-      }
-      p {
-        padding: 0px 80px;
-        margin-bottom: 65px;
-        font-size: 34px;
-        
-      }
-      a {
-        font-size: 10px;
-        width: 240px;
-        height: 55px;
-        padding: 0px 50px;
-        box-sizing: border-box;
-        border: 1px solid #414141;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-transform: uppercase;
-      }
+    &:nth-child(2) {
+      @include twoPanels(#F3EDE8);
+    }
+    &:nth-child(4) {
+      @include twoPanels(#DEE8E9);
     }
   }
+
+  .products_list {
+    @include productList();
+  }
+
+}
+
+em {
+  font-style: italic;
 }

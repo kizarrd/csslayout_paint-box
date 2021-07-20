@@ -1,0 +1,46 @@
+@import "_variables";
+
+@mixin twoPanels($bg) {
+    display: flex;
+    width: 100%;
+    margin-bottom: 80px;
+    .two_panels-img {
+      width: 50%;
+      img {
+        width: 100%;
+      }
+    }
+    .two_panels-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      background-color: $bg;
+      text-align: center;
+      h4 {
+        margin-bottom: 20px;
+      }
+      p {
+        padding: 0px 80px;
+        margin-bottom: 65px;        
+      }
+      a {
+        font-size: 10px;
+        width: 240px;
+        height: 55px;
+        padding: 0px 50px;
+        box-sizing: border-box;
+        border: 1px solid $black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        transition: $btn_trans_time;
+        &:hover {
+          background-color: $black;
+          color: white;
+        }
+      }
+    }
+}
