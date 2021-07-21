@@ -2,6 +2,7 @@
 @import "_variables";
 @import "_twoPanels";
 @import "_productsList";
+@import "_stories";
 
 body {
   display: flex;
@@ -89,6 +90,10 @@ main {
 
   .products_list {
     @include productList();
+  }
+
+  .stories {
+    @include stories();
   }
 
 }
