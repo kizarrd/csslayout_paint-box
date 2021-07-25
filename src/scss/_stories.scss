@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 50% 50%;
     gap: 0 0;
+    margin-bottom: 80px;
 
     .stories-image {
         padding-top: 67%;    
@@ -14,20 +15,22 @@
             width: 100%;
         }
     }
+    a {
 
-    .stories-content {
-        background-color: #F3EDE8;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        h4 {
-            margin-bottom: 60px;
-        }
-        p {
-            margin-bottom: 65px;
+        .stories-content {
+            height: 100%;
+            background-color: #F3EDE8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            h4 {
+                margin-bottom: 60px;
+            }
+            p {
+                margin-bottom: 65px;
+            }
         }
     }
-
     
 }

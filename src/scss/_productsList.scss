@@ -1,12 +1,12 @@
 @import "_variables";
+@import "_titleBox";
 
 @mixin productList {    
+
     .titleBox {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
+        @include titleBox();
     }
+
     .content {
         display: flex;
         width: 100%;

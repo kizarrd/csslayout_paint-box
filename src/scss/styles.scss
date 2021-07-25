@@ -3,22 +3,30 @@
 @import "_twoPanels";
 @import "_productsList";
 @import "_stories";
+@import "_titleBox";
 
 body {
   display: flex;
+  flex-direction: column;
   background-color: white;
-  height: 300vh;
-  justify-content: center;
+  align-items: center;
 }
 
 p {
   font-family: freight-display-pro,"Times New Roman",serif;
+  font-size: 34px;
 }
 
-h4 {
+input {
+  font-family: freight-display-pro,"Times New Roman",serif;
+}
+
+h4, li {
   font-weight: bold;              
   letter-spacing: 2.2px;
   font-family: proxima-nova,Helvetica,Arial,sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
 }
 
 button {
@@ -39,11 +47,20 @@ a {
   color: inherit;
 }
 
+em {
+  font-style: italic;
+}
+
+::placeholder {
+  opacity: 0.6;
+}
+
 header {
   width: 80%;
   height: 70px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: white;
   position: absolute;
   top: 50px;
@@ -54,21 +71,20 @@ header {
     font-size: 35px;
     transition: 0.2s;
   }
-  .header_left {
+  .header_left,
+  .header_right {
+    min-width: 230px;
     font-size: 10px;
   }
   .header_right {
-    font-size: 10px;
+    display: flex;
+    justify-content: flex-end;
+    button {
+      &:nth-child(2) {
+        font-size: 15px;
+      }
+    }
   }
-}
-
-h4 {
-  font-size: 10px;
-  text-transform: uppercase;
-}
-
-p {
-  font-size: 34px;
 }
 
 main {
@@ -96,8 +112,105 @@ main {
     @include stories();
   }
 
+  .getEmail {
+    margin: 0 auto;
+    margin-bottom: 80px;
+    max-width: 700px;
+    .titleBox {
+      @include titleBox();
+    }
+    .getEmail__input {
+      display: flex;
+      justify-content: center;
+      margin-top: 60px;
+      position: relative;
+      .getEmail__email {
+        width: 100%;
+        border: none;
+        border-bottom: 1px $black solid;
+        background-color: transparent;
+        color: $black;
+        font-size: 40px;
+        line-height: 45px;
+        padding: 20px 60px 20px 0;
+        &:focus {
+          outline: none;
+        }
+      }
+      .submitBtn {
+        border: 1px $black solid;
+        width: 45px;
+        height: 45px;
+        position: absolute;
+        right: 0;
+        top: 25%;
+        font-size: 15px;
+      }
+    }
+  }
+
+  .productExamples {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    .productExamples__box{
+      a {
+        .productExamples__box__box {
+          padding-top: 100%;
+          position: relative;
+          .productExamples__img {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: 0.3s;
+            &:hover {
+              opacity: 0.4;
+            }
+          }
+        }
+      } 
+    }
+    margin-bottom: 80px;
+  }
+
+  .instagram {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    span {
+      font-style: none;
+      opacity: 0.4;
+    }
+  }
+
 }
 
-em {
-  font-style: italic;
+footer {
+  background-color: #F3EDE8;
+  box-sizing: border-box;
+  padding: 70px 6%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .footer__boxes {
+    width: 33.3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &:nth-child(2) {
+      border-left: 1px $black solid;
+      border-right: 1px $black solid;
+    }
+    .footer__boxes__title {
+      opacity: 0.5;
+      margin-bottom: 25px;
+    }
+    ul {
+      width: 100%;
+      text-align: center;
+      line-height: 24px;
+    }
+  }
 }
